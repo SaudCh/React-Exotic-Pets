@@ -1,0 +1,9 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.bird-heading {
+  font-weight: bold;
+  font-size: 20px;
+  color: #228b22;
+}

@@ -1,0 +1,28 @@
+nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  height: 10vh;
+  background-color: #e8e8e8;
+}
+.Login-section {
+  list-style: none;
+  margin-right: 100px;
+  padding-top: 15px;
+}
+.logo {
+  margin-left: 100px;
+}
+.form {
+  border: 5px solid #198754;
+  max-width: fit-content;
+}
+.form input {
+  border: none;
+  outline: none;
+}
+.Login-section li {
+  display: inline-block;
+  margin-right: 30px;
+}

@@ -1,0 +1,18 @@
+.search {
+  height: 80vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../img/search-background.jpg");
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+}
+.form {
+  border: 5px solid #198754;
+  max-width: fit-content;
+  border-right: none;
+  border-radius: 10px;
+}
+.form input {
+  border: none;
+  outline: none;
+  height: fit-content;
+}

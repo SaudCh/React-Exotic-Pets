@@ -1,0 +1,12 @@
+.map {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+}
+.avatar-container {
+  width: 100px;
+  height: 100px;
+  border: 50px;
+}

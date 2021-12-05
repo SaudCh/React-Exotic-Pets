@@ -1,0 +1,6 @@
+.search {
+  height: 80vh;
+  background-image: url("../img/search-background.jpg");
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+}

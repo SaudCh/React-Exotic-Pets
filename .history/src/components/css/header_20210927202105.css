@@ -1,0 +1,12 @@
+nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.Login-section {
+  list-style: none;
+}
+.Login-section li {
+  display: inline-block;
+}

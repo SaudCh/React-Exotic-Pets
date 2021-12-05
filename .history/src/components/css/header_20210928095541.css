@@ -1,0 +1,39 @@
+nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  height: 10vh;
+  background-color: #e8e8e8;
+  z-index: 999;
+  position: relative;
+}
+.Login-section {
+  list-style: none;
+  margin-right: 100px;
+  padding-top: 15px;
+}
+.logo {
+  margin-left: 100px;
+}
+.Login-section li {
+  display: inline-block;
+  margin-right: 30px;
+}
+@media screen and (max-width: 700px) {
+  .Login-section {
+    position: absolute;
+    width: 100%;
+    top: 2vh;
+    text-align: center;
+    left: 0;
+    background-color: black;
+  }
+  .Login-section li {
+    display: block;
+    /* margin-bottom: 50px; */
+  }
+  .Login-section li:nth-child(1) {
+    margin-top: 10px;
+  }
+}

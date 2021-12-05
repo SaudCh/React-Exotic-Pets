@@ -1,0 +1,17 @@
+.map {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+}
+.avatar-container {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+.person-info-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}

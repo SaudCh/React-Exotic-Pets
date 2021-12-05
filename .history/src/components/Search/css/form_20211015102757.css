@@ -1,0 +1,27 @@
+.search-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.bdr {
+  border: 1px solid black;
+}
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+.card-container div {
+  margin-left: 10px;
+}
+.button-container {
+  display: flex;
+  justify-content: space-between;
+}
+.addToCartConatiner {
+  text-align: end;
+}
+.addToCartConatiner button {
+  margin: 10px 10px 0 0;
+}
