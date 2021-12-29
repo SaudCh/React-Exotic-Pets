@@ -1,0 +1,72 @@
+import { faSignOutAlt } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React, { useState } from "react";
+
+export default function Login() {
+  const [email, setEmail] = useState();
+  const [password, setPassword] = useState();
+
+  const loginSubmit = async (e) => {
+    e.preventDefault();
+    // try {
+    //   const response = await fetch("http://localhost:5000/api/users/login", {
+    //     method: "POST",
+    //     headers: {
+    //       "Content-Type": "application/json",
+    //     },
+    //     body: JSON.stringify({
+    //       email: formState.inputs.email.value,
+    //       password: formState.inputs.password.value,
+    //     }),
+    //   });
+    //   const responseData = await response.json();
+    //   if (!response.ok) {
+    //     throw new Error(responseData.message);
+    //   }
+    //   setIsLoading(false);
+    //   auth.login();
+    // } catch (err) {
+    //   setIsLoading(false);
+    //   setError(err.message || "Something went wrong, please try again.");
+    // }
+  };
+
+  return (
+    <div>
+      <form
+        className="col-11 col-sm-6 p-4 border bg-light rounded"
+        style={{ margin: "50px auto" }}
+        onSubmit={loginSubmit}
+      >
+        <h4 style={{ textAlign: "center" }}>
+          <FontAwesomeIcon icon={faSignOutAlt} /> Login
+        </h4>
+        <div class="form-group mb-3">
+          <label for="email">Email address</label>
+          <input
+            type="email"
+            class="form-control"
+            id="email"
+            placeholder="Enter email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+        </div>
+        <div class="form-group mb-3">
+          <label for="exampleInputPassword1">Password</label>
+          <input
+            type="password"
+            class="form-control"
+            id="exampleInputPassword1"
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+        </div>
+        <button type="submit" class="btn btn-primary">
+          Login
+        </button>
+      </form>
+    </div>
+  );
+}
