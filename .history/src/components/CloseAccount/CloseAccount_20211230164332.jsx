@@ -10,7 +10,6 @@ export default function CloseAccount() {
   const auth = useContext(AuthContext);
   const [close, setClose] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState();
 
   const deleteAccount = async (e) => {
     e.preventDefault();
@@ -32,26 +31,18 @@ export default function CloseAccount() {
       // setSuccess(responseData.message);
       //setError("");
 
-      setIsLoading(false);
+      //setIsLoading(false);
       auth.logout();
       history.push(`/`);
     } catch (err) {
       setIsLoading(false);
-      setError(err.message || "Something went wrong");
+      //setError(err.message || "Something went wrong");
     }
   };
   return (
     <div className="border bg-light p-3">
       {isLoading && <LoadingSpinner asOverlay />}
-      {error ? (
-        <ul
-          className="alert alert-danger"
-          style={{ listStyle: "none" }}
-          role="alert"
-        >
-          <li>{error}</li>
-        </ul>
-      ) : null}
+
       <p className="h3">
         <FontAwesomeIcon icon={faTimesCircle} /> Close account
       </p>

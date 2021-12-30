@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useContext } from "react";
-import Avatar from "./Avatar";
+import Advance from "./Advance";
 import Basic from "./Basic";
 import { AuthContext } from "../context/auth-context";
 import LoadingSpinner from "../Shared/LoadingSpinner";
 
-import PersonalInfo from "./PersonalInfo";
+import AccountDetail from "./AccountDetail";
 import Security from "./Security";
 
 export default function Account(props) {
@@ -13,25 +13,8 @@ export default function Account(props) {
   const [isLoading, setIsLoading] = useState("");
   const [user, setUser] = useState("");
 
-  const fetchUser = async () => {
-    setIsLoading(true);
-    try {
-      const response = await fetch(`http://localhost:5000/user/${auth.userId}`);
-      const responseData = await response.json();
-      //console.log(responseData);
-      if (!response.ok) {
-        throw new Error(responseData.message);
-      }
-      setUser(responseData);
-      setIsLoading(false);
-    } catch (err) {
-      setIsLoading(false);
-      setError(err.message || "Something went wrong, please try again.");
-    }
-  };
-
   useEffect(() => {
-    const fetchUser = async () => {
+    const fetchBirds = async () => {
       setIsLoading(true);
       try {
         const response = await fetch(
@@ -50,7 +33,7 @@ export default function Account(props) {
       }
     };
 
-    fetchUser();
+    fetchBirds();
   }, [auth.userId]);
   return (
     <div>
@@ -63,25 +46,15 @@ export default function Account(props) {
         >
           <li>{error}</li>
         </ul>
-      ) : (
-        <>
-          <Basic user={user} />
-          <div className="border bg-light rounded row mt-2 p-3 align-items-center">
-            <p className="h4">Hello {user.name}!</p>
-            <Avatar
-              user={user}
-              setIsLoading={setIsLoading}
-              fetchUser={fetchUser}
-            />
-            <PersonalInfo
-              user={user}
-              setIsLoading={setIsLoading}
-              fetchUser={fetchUser}
-            />
-            <Security setIsLoading={setIsLoading} user={user} />
-          </div>
-        </>
-      )}
+      ) : null}
+      <Basic user={user} />
+
+      <div className="border bg-light rounded row mt-2 p-3 align-items-center">
+        <p className="h4">Hello {user.name}!</p>
+        <Advance user={user} />
+        <AccountDetail user={user} setIsLoading={setIsLoading} />
+        <Security setIsLoading={setIsLoading} />
+      </div>
     </div>
   );
 }

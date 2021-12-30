@@ -40,13 +40,12 @@ export default function Advance(props) {
     const formData = new FormData();
     formData.append("image", file);
     formData.append("uid", auth.userId);
-    console.log(formData);
+
     try {
       const response = await fetch(`http://localhost:5000/user/img/update`, {
         method: "PATCH",
         body: formData,
       });
-      console.log(response);
     } catch (err) {}
   };
 
@@ -63,12 +62,18 @@ export default function Advance(props) {
           style={{ padding: "50px 0", flexDirection: "column" }}
           className="bg-white d-flex justify-content-center align-items-center"
         >
-          <img
-            src={Preview ? Preview : userlogo}
-            width={160}
-            className="border rounded"
-            alt=""
-          />
+          {!isValid ? (
+            <img
+              src={
+                user.image ? "http://localhost:5000/" + user.image : userlogo
+              }
+              width={160}
+              className="border rounded"
+              alt=""
+            />
+          ) : (
+            <img src={Preview} width={160} className="border rounded" alt="" />
+          )}
 
           <div className="mt-2">
             <button

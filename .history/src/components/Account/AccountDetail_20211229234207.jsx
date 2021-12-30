@@ -16,7 +16,7 @@ export default function AccountDetail(props) {
   const [success, setSuccess] = useState("");
 
   useEffect(() => {
-    const fetchBirds = async () => {
+    const fetchUserData = async () => {
       //setIsLoading(true);
       try {
         const response = await fetch(
@@ -39,9 +39,9 @@ export default function AccountDetail(props) {
         setError(err.message || "Something went wrong, please try again.");
       }
     };
-
-    fetchBirds();
+    fetchUserData();
   }, [auth.userId]);
+
   const updateInfo = async (e) => {
     e.preventDefault();
 

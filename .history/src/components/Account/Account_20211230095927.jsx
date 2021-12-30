@@ -68,11 +68,7 @@ export default function Account(props) {
           <Basic user={user} />
           <div className="border bg-light rounded row mt-2 p-3 align-items-center">
             <p className="h4">Hello {user.name}!</p>
-            <Avatar
-              user={user}
-              setIsLoading={setIsLoading}
-              fetchUser={fetchUser}
-            />
+            <Avatar user={user} setIsLoading={setIsLoading} />
             <PersonalInfo
               user={user}
               setIsLoading={setIsLoading}
